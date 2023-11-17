@@ -3,19 +3,14 @@
 
 public class Main {
     public static void main(String[] args) {
-
-        try {
-            System.out.print(divisionNumber(0, 15));
-        } catch (ArithmeticException e) {
-            System.out.println(e.getMessage()); //metodo che si usa per prendere il messaggio dell'eccezione
-        }
+        divisionNumber(5);
     }
 
-    public static int divisionNumber(int numero1, int numero2) { //funzione che divide due numeri
-        if (numero1 == 0) {
-            throw new ArithmeticException("Non divisibile per 0");
-        } else {
-            return numero2 / numero1;
+    public static void divisionNumber(int numero1) { //funzione che divide due numeri
+        try {
+            int risultato = numero1 / 0;
+        } catch (ArithmeticException e) {
+            System.out.println("L'errore è: " + e.getMessage());
         }
     }
 }
